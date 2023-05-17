@@ -7,10 +7,10 @@ public class VariablePractice {
 	public static void main(String[] args) {
 		
 		VariablePractice vp = new VariablePractice();
-//		vp. method1();
-//		vp. method2();
+		vp. method1();
+		vp. method2();
 		vp. method3();
-//		vp. method4();
+		vp. method4();
 
 	}
 	
@@ -35,10 +35,12 @@ public class VariablePractice {
 	int num1 = 2;
 	int num2 = 3;
 	
-	System.out.println("성인 " + (num1) + "명 : " + (num1 * 10000) + "명");
-	System.out.println("청소년 " + (num2) + "명 : " + (num2 * 7000) + "명");
-	System.out.println(" ");
-	System.out.println("총 금액 " + (num1 * 10000 + num2 * 7000) + "원");
+	int num3 = 10000;
+	int num4 = 7000;
+	
+	System.out.println("성인 " + (num1) + "명 : " + (num1 * num3) + "명");
+	System.out.println("청소년 " + (num2) + "명 : " + (num2 * num4) + "명\n");
+	System.out.println("총 금액 " + (num1 * num3 + num2 * num4) + "원");
 	}
 	
 	public void method3() {
@@ -46,7 +48,10 @@ public class VariablePractice {
 		int y = 7;
 		int z = 9;
 		
-		int x = (x + 2);
+		int a = x;
+		x = y;
+		y = z;
+		z = a;
 		
 	System.out.println("x=" + x);
 	System.out.println("y=" + y);
@@ -61,7 +66,7 @@ public class VariablePractice {
 		String cha = sc.nextLine();
 	
 		System.out.println("첫번재 문자 : " + cha. charAt(0));
-		System.out.println("마지막 문자 : " + cha. charAt(7));
+		System.out.println("마지막 문자 : " + cha. charAt(cha.length() - 1));
 
 
 	}
