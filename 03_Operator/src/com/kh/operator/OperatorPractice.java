@@ -100,7 +100,7 @@ public class OperatorPractice {
 			int result3 = (result2 >= 1 && result2 < 10) ? 1 : 0;
 			int result4 = result1 + result3;
 
-			System.out.println("필요한 바구니의 수 : " + result4);
+			System.out.printf("필요한 바구니의 수 : ", result4);
 			
 		}
 
