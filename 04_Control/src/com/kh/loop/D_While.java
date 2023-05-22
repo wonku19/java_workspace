@@ -96,26 +96,57 @@ public class D_While {
 		// 1과 100 사이의 값 입력 > 57
 		// 3번만에 맞췄습니다.
 		
-		double random1 = Math.random(); 
-		random1 = Math.random() * 100 + 1; 
-		int random2 = (int) random1; 
+		int random = (int)(Math.random()*100)+1;
+		int input = 0;
 		int count = 0;
 		
 		while(true) { 
 			count++;
 			System.out.print("1과 100 사이의 값 입력 > ");
-			int num1 = sc.nextInt();
-		 if (random2 == num1) {
+			input = sc.nextInt();
+		 if (random == input) {
 			System.out.println(count + "번 만에 맞췄습니다.");
 			break;
-		} else if (random2 > num1) {
+		} else if (random > input) {
 			System.out.println("더 큰 수를 입력하세요.");
-		} else if (random2 < num1) {
+		} else {
 			System.out.println("더 작은 수를 입력하세요.");
-		} 
+		}
 	}
-}
-
+	}
+		
+	public void method6 () {
+		
+		int balance = 0; //잔고
+		boolean run = true;
+		
+		while(run) {
+			System.out.println("----------------------------------");
+			System.out.println("1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료");
+			System.out.println("----------------------------------");
+			System.out.print("선택 > ");
+			int menu = Integer.parseInt(sc.nextLine()); // Integer 클래스의 parsInt메소드
+														// String -> int 로 입력됨
+			switch (menu) {
+			case 1 :
+				System.out.print("예금액 > ");
+				balance += Integer.parseInt(sc.nextLine());
+				break;
+			case 2 :
+				System.out.print("출금액 > ");
+				balance -= Integer.parseInt(sc.nextLine());
+				break;
+			case 3 :
+				System.out.print("잔고 > ");
+				System.out.println(balance);
+				break;
+			case 4 :
+				run = false;
+				break;
+			}
+		}
+	}
+			
 
 	public static void main(String[] args) {
 		D_While d = new D_While();
@@ -123,8 +154,7 @@ public class D_While {
 //		d.method2();
 //		d.method3();
 //		d.method4();
-		d.method5();
-
+//		d.method5();
+		d.method6();
 	}
-
 }

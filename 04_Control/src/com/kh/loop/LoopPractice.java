@@ -13,8 +13,8 @@ public class LoopPractice {
 //		a.method2();
 //		a.method3();
 //		a.method4();
-//		a.method5();
-		a.method6();
+		a.method5();
+//		a.method6();
 
 	}
 	
@@ -44,8 +44,23 @@ public class LoopPractice {
 
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
     public void method2() {
-
-    }
+    	
+    	int num1 = 0;
+    	int num2 = 0;
+    	
+    	while(true) {
+    		if (num1 % 2 == 0) {
+    			num2 += num1 * -1;
+    		}
+    		else{
+    			num2 += num1;
+    		}
+    		if(num2 >= 100) break;
+    		num1++;
+    	} 
+    	System.out.print(num1);
+   	} 
+    
 
     /*
         사용자로부터 문자열을 입력 받고 문자열에서 검색될 문자를 입력 받아 해당 문자열에 그 문자가 몇 개 있는지 개수를 출력하세요. 
@@ -57,7 +72,19 @@ public class LoopPractice {
     */
     public void method3() {
     	
-
+    	System.out.print("문자열 : ");
+    	String str = sc.nextLine();
+    	System.out.print("문자 : ");
+    	char ch = sc.next().charAt(0);
+    	
+    	int num1 = 0;
+    	
+    	for (int i=0; i<str.length(); i++) {
+    		if (str.charAt(i) == ch) {
+    			num1++;
+    		}
+    	}
+		System.out.println(str + " 안에 포함된 " + ch + " 개수 : " + num1);
     }
 
     /*
@@ -71,7 +98,18 @@ public class LoopPractice {
         0
      */
     public void method4() {
-
+    	
+    	while(true) {
+    		        	
+//        	int random = (int)(Math.random()*10); // 범위 0~9
+        	int random = (int)(Math.random()*11); // 범위 0~10
+        	
+        	System.out.println(random);
+        	
+    		if (random == 0) {
+    			break;
+    		} 
+    	}
     }
 
     /*
@@ -86,8 +124,40 @@ public class LoopPractice {
 ​
      */
     public void method5() {
-
+    	
+    	int count1 = 0;
+    	int count2 = 0;
+    	int count3 = 0;
+    	int count4 = 0;
+    	int count5 = 0;
+    	int count6 = 0;
+    	
+    	for(int i=0; i<10; i++)  { 
+        	
+        	int random = (int)(Math.random()*6+1);
+        	
+        	if (random == 1) {
+        		count1++;
+        	} else if (random == 2) {
+        		count2++;
+        	} else if (random == 3) {
+        		count3++;
+        	} else if (random == 4) {
+        		count4++;
+        	} else if (random == 5) {
+        		count5++;
+        	} else {
+        		count6++;
+        	} 
+    	}
+    	System.out.println("1 : " + count1);
+    	System.out.println("2 : " + count2);
+    	System.out.println("3 : " + count3);
+    	System.out.println("4 : " + count4);
+    	System.out.println("5 : " + count5);
+    	System.out.println("6 : " + count6);
     }
+    
 
     /*
         사용자의 이름을 입력하고 컴퓨터와 가위바위보를 하세요. 
@@ -112,18 +182,48 @@ public class LoopPractice {
         이겼습니다 !
     */
     public void method6() {
-
-		double random1 = Math.random(); 
-		random1 = ((Math.random()*(4-1))+1); 
-		int game2 = (int)random1;
-				
+      	
+    	int win = 0; // 이긴횟수
+    	int lose = 0; // 진횟수
+    	int draw = 0; // 비긴회수
+    	    	    	
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name = sc.nextLine();
+    	
     	while(true) {
-        	System.out.print("당신의 이름을 입력해주세요 : ");
-        	String name = sc.nextLine();
-        	System.out.print("가위바위보 : ");
-        	String game1 = sc.nextLine();
+    		System.out.print("가위바위보 : ");
+    		String play = sc.nextLine();
 
-    	} 
+    		int random = (int)(Math.random()*3+1);
+    		
+    		if (random == 1) {
+    			System.out.println("컴퓨터 : 가위");
+    		} else if (random == 2) {
+    			System.out.println("컴퓨터 : 바위");
+    		} else {
+    			System.out.println("컴퓨터 : 보");
+			}
+    		
+    		System.out.println(name + " : " + play);
+    		
+    		if ((random == 1 && play.equals("가위")) || 
+    			(random == 2 && play.equals("바위")) || 
+    			(random == 3 && play.equals("보")))  {
+    			System.out.println("비겼습니다.");
+    			draw++;
+    		} else if ( (random == 1 && play.equals("바위")) || 
+    			        (random == 2 && play.equals("보")) || 
+        			    (random == 3 && play.equals("가위" )) )  {
+        			    System.out.println("이겼습니다 !");
+        			    win++;
+        			    break;
+        	} else {
+        		System.out.println("졌습니다 ㅠㅠ");
+        		lose++;
+        	}
+    	}
+    	
+    	System.out.println("진 횟수 : " + lose + " 비긴 횟수 : " + draw + " 이긴 횟수 : " + win);
+    	
     }
 }
-
