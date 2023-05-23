@@ -11,10 +11,10 @@ public class ArrayPractice {
 		
 		
 		ArrayPractice a = new ArrayPractice();
-		a. method1();
+//		a. method1();
 //		a. method2();
 //		a. method3();
-//		a. method4();
+		a. method4();
 //		a. method5();
 	}
 
@@ -51,6 +51,20 @@ public class ArrayPractice {
 	 * */
 	public void method2() {
 		
+		int sum = 0;
+		
+		System.out.print("정수 : ");
+		int[] arr = new int[sc.nextInt()];
+		
+		for(int i=0; i<arr.length; i++) {
+			System.out.print(i + "번째 인덱스에 넣을 값 : ");
+			arr[i] = sc.nextInt();
+			if(i>=0) {
+				sum += arr[i];
+			}
+		}
+		System.out.println(Arrays.toString(arr));
+		System.out.println(sum);
 	}
 	
 	
@@ -61,6 +75,22 @@ public class ArrayPractice {
 	 * */
 	public void method3() {
 		
+		String food1[] = {"피자", "치킨", "햄버거"};
+		boolean count = false;
+		
+		System.out.print("배달할 음식을 입력해주세요 : ");
+		String food2 = sc.nextLine();
+		
+		for(int i=0; i<food1.length; i++) {
+			if(food1[i].equals(food2)) {
+				count = true;
+				break;
+				} 
+			} if (count == true) { 
+			System.out.println("배달 가능");
+			} else { 
+			System.out.println("배달 불가능");
+		}
 	}
 	
 	/*
@@ -74,11 +104,26 @@ public class ArrayPractice {
 	 * */
 	public void method4() {
 		
-		System.out.print("주민등록번호를 입력해주세요 : ");
-		String num1 = sc.nextLine();
+		System.out.print("주민등록번호 : ");
+		String adr = sc.nextLine();
 		
-		String[] num2 = num1.split("");
+		char[] copyadr = new char[14];
+		char[] copyadr2 = null;
 		
+		for(int i=0; i<adr.length(); i++) {
+			copyadr[i] = adr.charAt(i);
+		} 
+		copyadr2 = copyadr.clone();
+		
+		copyadr2[8] = (1);
+		copyadr2[9] = (1);
+		copyadr2[10] = (1);
+		copyadr2[11] = (1);
+		copyadr2[12] = (1);
+		copyadr2[13] = (1);
+		copyadr2[14] = (1);
+		
+		System.out.println(Arrays.toString(copyadr2));
 	}
 	
 	/*
@@ -102,5 +147,3 @@ public class ArrayPractice {
 	}
 	
 }
-	
-
