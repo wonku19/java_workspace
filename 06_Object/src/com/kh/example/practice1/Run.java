@@ -1,8 +1,8 @@
-package com.kh.example.practicel1;
+package com.kh.example.practice1;
 
 import java.util.Scanner;
 
-import com.kh.example.practicel1.model.Member;
+import com.kh.example.practice1.model.Member;
 
 public class Run {
 	

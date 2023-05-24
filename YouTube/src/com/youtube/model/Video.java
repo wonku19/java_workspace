@@ -18,24 +18,24 @@ public class Video {
 	// Delete : 삭제
 	// CRUD > Create / Read / Update / Delete 로 거의 모든 기능을 찾아낼 수 있음
 	
-	public void upload () {
-		
+	public Video upload () { // 동영상 업로드
+		return null;
 	}
 	
-	public void videoList() {
-		
+	public Video[] videoList() { // 동영상 목록
+		return null;
 	}
 	
-	public void viewVideo() {
-		
+	public Video viewVideo() { // 동영상 1개 보기
+		return null;		
 	}
 
-	public void updateVideo() {
-		
+	public Video updateVideo() { // 동영상 수정
+		return null;		
 	}
 
-	public void deleteVideo() {
-		
+	public boolean deleteVideo() {
+		return false;
 		
 	}
 	

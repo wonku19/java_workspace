@@ -1,4 +1,4 @@
-package com.kh.example.practicel1.model;
+package com.kh.example.practice1.model;
 
 public class Member {
 
