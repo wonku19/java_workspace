@@ -1,15 +1,27 @@
 package com.kh.example.practice4.model;
 
 public class Snack {
+
+	// 캡슐화 원칙에 따라 작성 
 	
-	private String kind;  // 종류
-	private String name; // 이름
-	private String flavor; // 재료
-	private int numOf; // 구매 갯수
-	private int price; // 가격 
+	// 멤버 변수는 캡슐화 원칙에 따라 private 으로 작성!!
+	private String kind;
+	private String name;
+	private String flavor;
+	private int numOf;
+	private int price;
 	
-	public Snack() {}
+	/* 생성자 
+	 * 객체 생성할때 : ex) Snack snack = new Snack() 
+	 */
+	
+	// 기본 생성자 
+	public Snack() {
+	}
+	
+	// 멤버변수로 지정한것들 매게변수로 지정함 위 기본생성자와 셋트
 	public Snack(String kind, String name, String flavor, int numOf, int price) {
+		super();
 		this.kind = kind;
 		this.name = name;
 		this.flavor = flavor;
@@ -17,6 +29,19 @@ public class Snack {
 		this.price = price;
 	}
 	
+	/* getter & setter 생성
+	 * - Getter : 멤버 변수의 값을 호출하는 메서드 (매개변수를 받지 않아서 리턴으로 값을 보내줌)
+	 *  [표기법]
+	 *   public 멤버 변수에서 지정한 자료형 getXXX() {
+	 *   	return 멤버변수에서 지정한 자료형에 해당하는 값;
+	 *   }
+	 *   
+	 * - Setter : 멤벼 변수의 값을 변경시키는 메서드 (매개변수를 받는 대신에 밖으로 반환하지 않기 떄문에 void가 들어간다)
+	 *  [표기법]
+	 *   public void setXXX(멤버변수에서 지정한 자료형 변수명) {
+	 *   	this.변수명 = 변수명; (this는 나 자신을 뜻함 결국 변수명과 동일함을 뜻한다) 
+	 *   }
+	 */
 	public String getKind() {
 		return kind;
 	}
@@ -24,7 +49,7 @@ public class Snack {
 	public void setKind(String kind) {
 		this.kind = kind;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -32,6 +57,7 @@ public class Snack {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getFlavor() {
 		return flavor;
 	}
@@ -39,7 +65,7 @@ public class Snack {
 	public void setFlavor(String flavor) {
 		this.flavor = flavor;
 	}
-	
+
 	public int getNumOf() {
 		return numOf;
 	}
@@ -47,7 +73,7 @@ public class Snack {
 	public void setNumOf(int numOf) {
 		this.numOf = numOf;
 	}
-	
+
 	public int getPrice() {
 		return price;
 	}
@@ -56,6 +82,12 @@ public class Snack {
 		this.price = price;
 	}
 	
+	/* - 모든 클래스의 가장 최상위 클래스 : Object
+	 *   즉, 모든 클래스는 Object 클래스를 부모 클래스로 "상속" 받아서 사용하고 있음
+	 *   toString 은 Object가 가지고 있는 메서드 이다. -> 부모 클래스가 가지고 있는 메서드가 사용 가능하다 라는 뜻
+	 * - @Override : 부모 클래스의 메서드를 재정의 하는것! 
+	 */
+	@Override
 	public String toString() {
 		return "Snack [kind=" + kind + ", name=" + name + ", flavor=" + flavor + ", numOf=" + numOf + ", price=" + price
 				+ "]";
