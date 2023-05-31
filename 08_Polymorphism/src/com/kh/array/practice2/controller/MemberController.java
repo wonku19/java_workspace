@@ -9,8 +9,8 @@ public class MemberController {
 	public int count = 0;
 	
 	// 1번의 경우
-//	public void insertMember(String id, String name, String password, 
-//			                 String email, char gender, int age) {
+	//	public void insertMember(String id, String name, String password, String email, char gender, int age) {
+	
 	// 2번의 경우
 	public void insertMember(Member m) {
 		// 객체 배열에 객체 하나씩 추가한다고 생각!
@@ -30,8 +30,7 @@ public class MemberController {
 		
 	}
 	
-	public boolean updateMember(String id, String name, 
-			        String password, String email) {
+	public boolean updateMember(String id, String name, String password, String email) {
 		// checkId 활용! <-- index
 		// 추가처럼 수정도 같은 방식! 해당 인덱스 값에 넣는 방식!
 		// setter 이용!
