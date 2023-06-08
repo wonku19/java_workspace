@@ -1,15 +1,16 @@
 package com.kh.practice3;
 
 import java.util.HashMap;
+
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
 import com.kh.practice3.controller.FarmController;
+import com.kh.practice3.model.Farm;
 import com.kh.practice3.model.Fruit;
 import com.kh.practice3.model.Nut;
 import com.kh.practice3.model.Vegetable;
-import com.youtube.impl.Farm;
 
 public class Application {
 	
