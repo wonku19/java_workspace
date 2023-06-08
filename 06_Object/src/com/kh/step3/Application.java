@@ -1,7 +1,6 @@
 package com.kh.step3;
 
 import java.util.Scanner;
-
 import com.kh.step3.model.Calculator;
 
 public class Application {
