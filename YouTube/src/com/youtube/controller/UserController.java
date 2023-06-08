@@ -19,7 +19,6 @@ public class UserController {
 		this.user = user;
 	}
 
-	
 	public User viewProfile() { // 프로필 보기 (로그인 된 경우)
 		
 		if(login(user.getId(), user.getPassword())) {
