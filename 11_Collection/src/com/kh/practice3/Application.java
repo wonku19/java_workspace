@@ -369,9 +369,8 @@ public class Application {
 				} else {
 					System.out.println("잘못 입력하였습니다 다시 입력해주세요.");
 					removeFarm();
-				
+					
 			}
-			
 		
 		} catch (Exception e) {
 			System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
