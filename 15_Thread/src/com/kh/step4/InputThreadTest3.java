@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class InputThreadTest3 {
 
-	// 출력시 팝업창 + 10초 카운트가 시작되고 입력하면 카운팅 중단
+	// 출력시 팝업창 + 10초 카운트가 시작되고 입력하면 카운팅 중단, 카운팅이 끝나면 프로그램 종료
 	
 	boolean inputCheck = false;
 	
@@ -49,10 +49,16 @@ class Counting implements Runnable {
 		// 2. 카운팅 작업
 		for(int i=10; i>0; i--) {
 			try {
-				if(process.inputCheck) break;
+				if(process.inputCheck) { 
+					break;
+				}
 					System.out.println(i);
 					Thread.sleep(1000);				
 			} catch (InterruptedException e) {}
+		} 
+		if(!process.inputCheck) {
+			System.out.println("입력시간이 초과되었습니다.");
+			System.exit(0); // 프로그렘 종료시켜줌
 		}
 	}
 }
